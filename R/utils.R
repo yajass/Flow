@@ -187,7 +187,7 @@ ssub_cmd = function(script.fn, queue, jname = NULL, jlabel = NULL, jgroup = NULL
         ## if (!is.null(cwd)) out_cmd = paste(out_cmd, " --workdir=", cwd , sep = '')
         if (!is.null(cwd)) {
             current_umask = Sys.umask(mode = NA)
-            out_cmd = paste0(out_cmd, " --chdir=", cwd)
+            out_cmd = paste0(out_cmd, " --workdir=", cwd)
             Sys.umask(mode = "0002")
             base::file.create(trimws(paste0(cwd, "/", qjout)))
             Sys.umask(mode = current_umask)
